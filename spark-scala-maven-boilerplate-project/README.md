@@ -13,6 +13,10 @@ Inside the ```/target``` folder you will find the result fat jar called ```spark
       spark-scala-maven-project-0.0.1-SNAPSHOT-jar-with-depencencies.jar \
       inputhdfspath \
       outputhdfspath
+      
+For me,
+    
+    bin/spark-submit --class com.examples.MainExample --conf spark.ui.port=9999 --master local[4] spark-scala-maven-project-0.0.1-SNAPSHOT.jar text_example.txt 123.txt 
 
 The parameters ```inputhdfspath``` and ```outputhdfspath``` don't have to present the form ```hdfs://path/to/your/file``` but directly ```/path/to/your/files/``` because submitting a job the default file system is HDFS. To retrieve the result locally:
 
